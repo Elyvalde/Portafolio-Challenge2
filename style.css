@@ -1,0 +1,225 @@
+:root {
+    --color-de-fondo: #f3f6f4; /* Cambié el color de fondo a un tono más claro */
+    --color-de-fondo-menu: #5c2953; /* Un color más oscuro y elegante para el menú */
+    --color-de-link: #ffd700; /* Amarillo dorado para los links */
+    --color-texto: #1a1a1a; /* Negro para texto */
+    --color-boton: #ac4599; /* Color de botones */
+    --color-hover-boton: #d473b3; /* Color hover de botones */
+}
+
+body {
+    background-color: var(--color-de-fondo);
+    color: var(--color-texto);
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-de-link);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-hover-boton);
+}
+
+/* ------------------------------ Sección Menú -------------------------------*/
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--color-de-fondo-menu);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cabecera__logo {
+    max-width: 80px;
+    border-radius: 50%; /* Logo redondeado */
+}
+
+.cabecera__titulo {
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.navegacion__lista {
+    display: none;
+}
+
+.navegacion__elemento a {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navegacion__elemento a:hover {
+    background-color: var(--color-hover-boton);
+    color: white;
+}
+
+/* ------------------------------ Sección Presentación ------------------------------*/
+.presentacion_fotoperfil {
+    width: 50px; /* Ajusta el tamaño según lo necesites */
+    height: 150px; /* Mantén la proporción para hacerla circular */
+    border-radius: 50%; /* Imagen completamente redonda */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+
+.presentacion__contenedor {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.presentacion__titulo {
+    font-size: 2rem;
+    color: var(--color-de-fondo-menu);
+}
+
+.presentacion__subtitulo {
+    font-size: 1.2rem;
+    color: var(--color-texto);
+}
+
+/* ------------------------------ Sección sobre mí ----------------------------------*/
+.sobre-mi__titulo {
+    font-size: 1.8rem;
+    color: var(--color-de-fondo-menu);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/*------------------------------ Sección de Habilidades ------------------------------*/
+.habilidades__elemento {
+    text-align: center;
+    margin-bottom: 1.0rem;
+}
+
+.habilidades__icono {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.habilidades__icono:hover {
+    transform: scale(1.1);
+}
+
+.habilidades__nombre {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/*------------------------------ Sección de Proyectos --------------------------------*/
+.proyectos__contenedor {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.proyectos__nombre {
+    font-size: 1.5rem;
+    color: var(--color-de-fondo-menu);
+}
+
+.proyectos__descripcion {
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+/* ------------------------------ Sección de Contacto ---------------------------------*/
+.contacto__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.contacto__campo {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-de-fondo-menu);
+    font-size: 1rem;
+}
+
+.contacto__boton {
+    padding: 10px 20px;
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto__boton:hover {
+    background-color: var(--color-hover-boton);
+}
+
+/* ------------------------------ Responsividad ---------------------------------------*/
+/* Tablets y pantallas más grandes */
+@media (min-width: 768px) {
+    .cabecera {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cabecera__logo {
+        max-width: 100px;
+    }
+
+    .cabecera__titulo {
+        font-size: 1.8rem;
+    }
+
+    .navegacion__lista {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-top: 0;
+    }
+
+    .navegacion__elemento a {
+        font-size: 1rem;
+    }
+
+    .presentacion__contenedor {
+        text-align: left;
+    }
+
+    .presentacion__titulo {
+        font-size: 2.2rem;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1024px) {
+    .cabecera__titulo {
+        font-size: 2rem;
+    }
+
+    .navegacion__elemento a {
+        font-size: 1.2rem;
+    }
+
+    .proyectos__contenedor {
+        padding: 30px;
+    }
+}
